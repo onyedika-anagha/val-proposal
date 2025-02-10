@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import CardDeck from "./component/cards";
-import firstDayVideo from "./assets/first-day.mp4";
 
 // Add swipe icon component
 const SwipeIcon = () => (
@@ -99,16 +98,7 @@ const memories = [
     id: 11,
     title: "I'm so happy",
     description: "When we danced in the rain...",
-    content: (
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-full object-cover rounded-lg"
-        src={firstDayVideo}
-      />
-    ),
+    content: <span>Video or Image </span>,
     color: "#ec4899",
   },
 ];
