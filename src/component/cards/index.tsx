@@ -27,7 +27,7 @@ const CardDeck = ({
         {cardStack.map((card, index) => (
           <motion.div
             key={card.id}
-            className="card"
+            className={`card ${card.content ? "!p-2" : ""}`}
             style={{
               background: card.color,
               zIndex: cardStack.length - index,

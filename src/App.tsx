@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import CardDeck from "./component/cards";
-
+import image from "./assets/img.jpg";
 // Add swipe icon component
 const SwipeIcon = () => (
   <svg
@@ -42,63 +42,69 @@ const memories = [
   },
   {
     id: 2,
-    title: "I'm sorry this is coming late",
-    description: "I'm sorry this is coming late",
+    title: "Sorry this is coming late",
+    description: "But I had to make it special",
     color: "#ec4899",
   },
   {
     id: 3,
-    title: "But from the day I met you",
-    description: "That beautiful sunset we shared...",
+    title: "But its been amazing 5 months of knowing you",
+    description: "Every moment has been precious",
     color: "#3357ff",
   },
   {
     id: 4,
-    title: "Since you were mine, Its been all about you",
-    description: "Our first movie together...",
+    title: "You have this amazing person in you",
+    description: "Your personality shines so bright",
     color: "#ff33a8",
   },
   {
     id: 5,
-    title: "My Smiles",
-    description: "When we danced in the rain...",
+    title: "You make me smile a lot",
+    description: "Your smile lights up my world",
     color: "#ec4899",
   },
   {
     id: 6,
-    title: "My Joy",
-    description: "When we danced in the rain...",
+    title: "Answering your name",
+    description: "The sweetest name I know",
     color: "#ec4899",
   },
   {
     id: 7,
-    title: "Even my writings",
-    description: "When we danced in the rain...",
+    title: "You truly are onyinye",
+    description: "A precious gift from above",
     color: "#ec4899",
   },
   {
     id: 8,
-    title: "My life",
-    description: "When we danced in the rain...",
+    title: "God's gift to the world(to me)",
+    description: "My special blessing",
     color: "#ec4899",
   },
   {
     id: 9,
-    title: "And Today I still feel the same",
-    description: "When we danced in the rain...",
+    title: "Let's eat more amala together",
+    description: "Our favorite meal together",
     color: "#ec4899",
   },
   {
     id: 10,
-    title: "And more",
-    description: "When we danced in the rain...",
+    title: "And maybe each other too 😉",
+    description: "Just being a little naughty 😉",
     color: "#db2777",
   },
   {
     id: 11,
-    title: "I'm so happy",
-    description: "When we danced in the rain...",
-    content: <span>Video or Image </span>,
+    title: "So. . .",
+    description: "My heart beats for you",
+    content: (
+      <img
+        src={image}
+        alt="Valentine"
+        className="w-full h-full object-cover rounded-lg"
+      />
+    ),
     color: "#ec4899",
   },
 ];
