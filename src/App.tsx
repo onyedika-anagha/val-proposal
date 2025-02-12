@@ -48,7 +48,7 @@ const memories = [
   },
   {
     id: 3,
-    title: "But its been amazing 5 months of knowing you",
+    title: "But its been an amazing 5 months of knowing you",
     description: "Every moment has been precious",
     color: "#3357ff",
   },
