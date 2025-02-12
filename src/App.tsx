@@ -94,24 +94,11 @@ const memories = [
     description: "Just being a little naughty 😉",
     color: "#db2777",
   },
-  {
-    id: 11,
-    title: "So. . .",
-    description: "My heart beats for you",
-    content: (
-      <img
-        src={image}
-        alt="Valentine"
-        className="w-full h-full object-cover rounded-lg"
-      />
-    ),
-    color: "#ec4899",
-  },
 ];
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
-  const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
+  const [noButtonPosition, setNoButtonPosition] = useState({ x: 10, y: 10 });
   const [messageIndex, setMessageIndex] = useState(0);
 
   const moveNoButton = () => {
@@ -156,7 +143,7 @@ function App() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div className="min-h-screen overflow-hidden flex flex-col items-center justify-center">
       {currentPage < memories.length ? (
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center justify-center gap-4">
