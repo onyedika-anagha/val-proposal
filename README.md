@@ -1,50 +1,112 @@
-# React + TypeScript + Vite
+# Valentine's Day Interactive Proposal App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, interactive Valentine's Day proposal app built with React, TypeScript, and Tailwind CSS. Features swipeable memory cards, animated UI elements, and a fun interactive proposal screen.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎴 Swipeable memory cards with beautiful animations
+- 💝 Interactive proposal screen
+- 😄 Moving "No" button with custom messages
+- 🎨 Customizable colors and themes
+- 📱 Fully responsive design
+- 🎥 Support for images and videos in cards
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (v14 or higher)
+- npm or yarn
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone [your-repo-url]
+cd valentine-app
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+## Customization
+
+### Modifying Memory Cards
+
+Edit the `memories` array in `src/App.tsx`. Each card follows this structure:
+
+```typescript
+{
+  id: number,
+  title: "Your Title",
+  description: "Your Description",
+  color: "#HexColor",
+  content?: React.ReactNode // Optional for images/videos
+}
+```
+
+### Changing Messages
+
+Modify the `messages` array in `src/App.tsx` to customize the messages shown when hovering over the "No" button.
+
+### Styling
+
+- Colors: Update the color scheme in `tailwind.config.js`
+- Animations: Modify animations in `src/App.css`
+- Layout: Adjust the layout in component files
+
+### Adding Media
+
+To add images or videos to cards:
+
+1. Place your media files in `src/assets/`
+2. Import them in `App.tsx`
+3. Add them to the card's `content` property
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── cards/        # Card deck component
+│   └── ...
+├── assets/           # Images, videos, etc.
+├── App.tsx          # Main application
+├── App.css          # Main styles
+└── index.css        # Global styles
+```
+
+## Built With
+
+- React + TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vite
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Built with love for Valentine's Day
+- Inspired by creative proposal ideas
+- Thanks to the React and Tailwind CSS communities

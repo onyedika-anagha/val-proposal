@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import CardDeck from "./component/cards";
-import image from "./assets/img.jpg";
-// Add swipe icon component
+
+/**
+ * SwipeIcon Component
+ * Renders an animated arrow icon to indicate swipe functionality
+ * The animation is controlled via Tailwind classes
+ */
 const SwipeIcon = () => (
   <svg
     className="w-6 h-6 animate-swipe-left"
@@ -20,6 +24,11 @@ const SwipeIcon = () => (
   </svg>
 );
 
+/**
+ * Messages shown when user tries to click "No"
+ * Add or modify messages to customize the experience
+ * Each message supports emoji
+ */
 const messages = [
   "Please say yes! 🥺",
   "Are you sure? Think again! 💭",
@@ -33,81 +42,122 @@ const messages = [
   "Just click yes already! 🎀",
 ];
 
+/**
+ * Memory cards configuration
+ * Each card can have:
+ * @property {number} id - Unique identifier for the card
+ * @property {string} title - Main text shown on the card
+ * @property {string} description - Secondary text or description
+ * @property {string} color - Background color in hex format
+ * @property {React.ReactNode} content - Optional content like video/image
+ *
+ * Example structure for adding your own memories:
+ * {
+ *   id: number,
+ *   title: "Your Title",
+ *   description: "Your Description",
+ *   color: "#HexColor",
+ *   content?: <YourComponent /> // Optional
+ * }
+ */
 const memories = [
   {
     id: 1,
-    title: "Hi",
-    description: "The day we first met...",
+    title: "Hello!",
+    description: "Welcome to our journey...",
     color: "#ff5733",
   },
   {
     id: 2,
-    title: "Sorry this is coming late",
-    description: "But I had to make it special",
+    title: "Our First Memory",
+    description: "Where it all began...",
     color: "#ec4899",
   },
   {
     id: 3,
-    title: "But its been an amazing 5 months of knowing you",
-    description: "Every moment has been precious",
+    title: "Special Moments",
+    description: "Time spent with you...",
     color: "#3357ff",
   },
   {
     id: 4,
-    title: "You have this amazing person in you",
-    description: "Your personality shines so bright",
+    title: "Your Beautiful Soul",
+    description: "Everything about you...",
     color: "#ff33a8",
   },
   {
     id: 5,
-    title: "You make me smile a lot",
-    description: "Your smile lights up my world",
+    title: "Precious Smiles",
+    description: "Your happiness means everything...",
     color: "#ec4899",
   },
   {
     id: 6,
-    title: "Answering your name",
-    description: "The sweetest name I know",
+    title: "Sweet Memories",
+    description: "Every moment with you...",
     color: "#ec4899",
   },
   {
     id: 7,
-    title: "You truly are onyinye",
-    description: "A precious gift from above",
+    title: "My Treasure",
+    description: "You're so precious...",
     color: "#ec4899",
   },
   {
     id: 8,
-    title: "God's gift to the world(to me)",
-    description: "My special blessing",
+    title: "My Blessing",
+    description: "Grateful for you...",
     color: "#ec4899",
   },
   {
     id: 9,
-    title: "Let's eat more amala together",
-    description: "Our favorite meal together",
+    title: "Our Favorite Things",
+    description: "All the little moments...",
     color: "#ec4899",
   },
   {
     id: 10,
-    title: "And maybe each other too 😉",
-    description: "Just being a little naughty 😉",
+    title: "Sweet Nothings",
+    description: "Just being playful...",
     color: "#db2777",
   },
   {
     id: 11,
-    title: "I'm so happy",
-    description: "When we danced in the rain...",
-    content: <span>Video or Image </span>,
+    title: "The Big Question",
+    description: "A special moment...",
+    content: (
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover rounded-lg"
+        src="/path/to/your/video.mp4" // Replace with your video path
+      />
+    ),
     color: "#ec4899",
   },
 ];
 
+/**
+ * Main App Component
+ * Features:
+ * 1. Swipeable memory cards
+ * 2. Interactive proposal screen
+ * 3. Moving "No" button with custom messages
+ * 4. Animated UI elements
+ */
 function App() {
+  // State for tracking current card and button position
   const [currentPage, setCurrentPage] = useState(0);
   const [noButtonPosition, setNoButtonPosition] = useState({ x: 10, y: 10 });
   const [messageIndex, setMessageIndex] = useState(0);
 
+  /**
+   * Handles the movement of the "No" button
+   * Randomly positions the button within viewport
+   * Updates the pleading message
+   */
   const moveNoButton = () => {
     const newX = Math.random() * (window.innerWidth - 100);
     const newY = Math.random() * (window.innerHeight - 50);
