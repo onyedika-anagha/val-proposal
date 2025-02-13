@@ -94,6 +94,13 @@ const memories = [
     description: "Just being a little naughty 😉",
     color: "#db2777",
   },
+  {
+    id: 11,
+    title: "I'm so happy",
+    description: "When we danced in the rain...",
+    content: <span>Video or Image </span>,
+    color: "#ec4899",
+  },
 ];
 
 function App() {
